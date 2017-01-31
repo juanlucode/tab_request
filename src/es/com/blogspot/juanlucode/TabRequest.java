@@ -27,7 +27,7 @@ public class TabRequest extends Tab {
 	// CONSTRUCTORS
 	
 	public TabRequest(){
-		//super();
+		super();
 		
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("tab_request.fxml"));
         fxmlLoader.setRoot(this);
