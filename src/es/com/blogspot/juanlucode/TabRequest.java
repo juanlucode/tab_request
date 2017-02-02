@@ -24,6 +24,8 @@ public class TabRequest extends Tab {
 	@FXML
 	private TextArea bodyTextArea;
 	
+	private boolean controlsEditables;
+	
 	// CONSTRUCTORS
 	
 	public TabRequest(){
@@ -35,6 +37,7 @@ public class TabRequest extends Tab {
 
         try {
             fxmlLoader.load();
+            this.controlsEditables = true;
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }		
@@ -81,6 +84,16 @@ public class TabRequest extends Tab {
 	
 	public void setBodyText(String bodyText){
 		this.bodyTextArea.setText(bodyText);
+	}
+	
+	public boolean areControlsEditables(){
+		return this.controlsEditables;
+	}
+	
+	public void setControlsEditables(boolean editables){
+		this.controlsEditables = editables;
+		this.subjectTextField.setEditable(this.controlsEditables);
+		this.bodyTextArea.setEditable(this.controlsEditables);
 	}
 	
 }
